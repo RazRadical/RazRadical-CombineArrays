@@ -1,4 +1,7 @@
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 public class CombineArrays {
     /**
      * Combine two arrays into a single array and return it.
@@ -9,6 +12,12 @@ public class CombineArrays {
      */
     public int[] combine(int[] arr1, int[] arr2){
 
-        return null;
+        int[] arrCombined = mergeArraysUsingStreams(arr1, arr2);
+
+        return arrCombined;
+    }
+
+    public static int[] mergeArraysUsingStreams(int[] arr1, int[] arr2) {
+        return IntStream.concat(Arrays.stream(arr1), Arrays.stream(arr2)).toArray();
     }
 }
